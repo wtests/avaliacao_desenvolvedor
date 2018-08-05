@@ -1,24 +1,42 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Dependencies
+To run this project you must have [docker](https://docs.docker.com/install/) installed.
 
-Things you may want to cover:
+## app.sh
+Everithing can be done through app.sh script, on root path of this application source code. to get help on how to use, only run script without parameters:
+```
+./app.sh
+```
 
-* Ruby version
+## Before all
+Before all, you must build application image, that can be done with:
+```
+./app.sh build
+```
+This command will create a docker image with all dependencies wired for application
 
-* System dependencies
+## Prepare database
+After success build of application image, you must setup database with:
+```
+./app.sh prepare
+```
 
-* Configuration
+## Running tests
+To run tests, execute:
+```
+./app.sh tests
+```
 
-* Database creation
+## Executing application
+To up application server, run:
+```
+./app.sh run
+```
+You can access application through [http://localhost:3000/](http://localhost:3000/)
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Getting access to application terminal
+This will give access to application image terminal, once you get access, will be available rails commands and rails console.
+```
+./app.sh terminal
+```

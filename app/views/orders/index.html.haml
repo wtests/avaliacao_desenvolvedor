@@ -6,9 +6,9 @@
   .modal-dialog{:role => "document"}
     .modal-content
       .modal-header
+        %h4#import_files_label.modal-title Importar arquivos
         %button.close{"aria-label" => "Close", "data-dismiss" => "modal", :type => "button"}
           %span{"aria-hidden" => "true"} ×
-        %h4#import_files_label.modal-title Importar arquivos
       .modal-body
         = simple_form_for @import_file, url: import_orders_path do |f|
           = f.input :file
