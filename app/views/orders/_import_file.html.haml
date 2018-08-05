@@ -1,0 +1,5 @@
+%tr{id: "import_file_#{import_file.id}"}
+  %td= import_file['file']
+  %td= number_to_currency import_file.total
+  %td= import_file.order_count
+  %td= l import_file.created_at, format: :short

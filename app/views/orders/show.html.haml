@@ -1,0 +1,36 @@
+%h1 Pedido ##{@order.id}
+
+%p
+  %strong Nome do cliente:
+  = @order.customer_name
+
+%p
+  %strong Descrição:
+  = @order.description
+
+%p
+  %strong Valor:
+  = number_to_currency @order.value
+
+%p
+  %strong Quantidade:
+  = @order.quantity
+
+%p
+  %strong Endereço:
+  = @order.address
+
+%p
+  %strong Fornecedor:
+  = @order.provider
+
+
+%p
+  %strong Cadastrado em:
+  = l @order.created_at, format: :short
+
+%p
+  %strong Última alteração em:
+  = l @order.updated_at, format: :short
+
+= link_to "Voltar para listagem", root_path, class: 'btn btn-default'

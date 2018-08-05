@@ -1,0 +1,47 @@
+%h1 Listagem de pedidos
+%button.btn.btn-primary{"data-target" => "#import_files", "data-toggle" => "modal", :type => "button"}
+  Importar pedidos
+
+#import_files.modal.fade{"aria-labelledby" => "import_files_label", :role => "dialog", :tabindex => "-1"}
+  .modal-dialog{:role => "document"}
+    .modal-content
+      .modal-header
+        %button.close{"aria-label" => "Close", "data-dismiss" => "modal", :type => "button"}
+          %span{"aria-hidden" => "true"} ×
+        %h4#import_files_label.modal-title Importar arquivos
+      .modal-body
+        = simple_form_for @import_file, url: import_orders_path do |f|
+          = f.input :file
+          = f.submit "Importar", class: 'btn btn-primary'        
+
+%h2 Pedidos
+%table.table
+  %thead
+    %tr
+      %th Nome do cliente
+      %th Valor
+      %th Descrição
+      %th Criado em
+      %th
+  %tbody
+    - if @orders.empty?
+      %tr
+        %td(colspan="4") Ainda não há pedidos importados.
+    - else
+      = render @orders
+= paginate @orders
+
+%h2 Importações
+%table.table
+  %thead
+    %tr
+      %th Nome do arquivo
+      %th Valor total dos pedidos
+      %th Registros importados
+      %th Criado em
+  %tbody
+    - if @import_files.empty?
+      %tr
+        %td(colspan="4") Ainda não há importações de arquivos.
+    - else
+      = render partial: 'orders/import_file', collection: @import_files

@@ -1,0 +1,9 @@
+pt-BR:
+  activerecord:
+    models:
+      import_file:
+        one: Arquivo de importação
+        other: Arquivos de importação
+    attributes:
+      import_file:
+        file: Arquivo

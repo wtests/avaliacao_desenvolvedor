@@ -1,0 +1,17 @@
+!!!
+%html
+  %head
+    %title Avaliacao dev
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  %body
+    .container
+      - if flash[:error]
+        .alert.alert-danger.alert-dismissible{:role => "alert"}
+          %button.close{"aria-label" => "Close", "data-dismiss" => "alert", :type => "button"}
+            %span{"aria-hidden" => "true"} ×
+          %strong Atenção!
+          = flash[:error]
+    
+      = yield

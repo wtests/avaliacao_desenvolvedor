@@ -1,0 +1,14 @@
+pt-BR:
+  activerecord:
+    models:
+      order:
+        one: Pedido
+        other: Pedidos
+    attributes:
+      order:
+        customer_name: Nome do cliente
+        description: Descrição
+        value: Valor
+        quantity: Quantidade
+        address: Address
+        provider: Fornecedor

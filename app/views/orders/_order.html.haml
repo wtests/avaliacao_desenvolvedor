@@ -1,0 +1,7 @@
+%tr{id: "order_#{order.id}"}
+  %td= order.customer_name
+  %td= number_to_currency order.value
+  %td= order.description
+  %td= l order.created_at, format: :short
+  %td
+    = link_to 'Ver', order_path(order), class: 'btn btn-xs btn-default'
